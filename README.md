@@ -97,9 +97,13 @@ WeatherWatch is a Python based command-line interface which allows users to acce
 ### Python Libraries
 
 [Google Maps](https://github.com/googlemaps/google-maps-services-python) - Used to retrieve the latitude and longitude of the locations entered by users via the Google Places API
+
 [openmeteo_py](https://github.com/m0rp43us/openmeteopy) - Used to retrieve the weather data from Open Meteo's API
+
 [art](https://github.com/sepandhaghighi/art) - Used to generate the WeatherWatch logo art
+
 [readchar](https://github.com/magmax/python-readchar) - Used to monitor keypresses in order for return home functions to be called
+
 [rich](https://github.com/Textualize/rich) - Used in formatting of the weather tables and styling of the text
 
 ## Credits
