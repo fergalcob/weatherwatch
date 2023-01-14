@@ -145,6 +145,13 @@ WeatherWatch is a Python based command-line interface which allows users to acce
 
 [rich](https://github.com/Textualize/rich) - Used in formatting of the weather tables and styling of the text
 
+### Resources
+
+[Open Meteo](https://open-meteo.com/) - Free API used in this project with access to both current and historical weather data
+[Rich Documentation](https://rich.readthedocs.io/en/stable/) - Helped in the use of the Rich library for styling and table creation
+[W3Schools](https://www.w3schools.com/python/default.asp) - General documentation on Python syntax
+[PyPI](https://pypi.org/) - Used for finding specific Python libraries to meet the project needs
+
 ## Credits
 ### Code
 
