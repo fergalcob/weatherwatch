@@ -6,27 +6,17 @@
  - [App Goals](#app-goals)
  - [User Stories](#user-stories)
    * [First Time User](#first-time-user)
- - [Features](#features)
-   * [Header Section](#header-section)
-   * [Answer Field & Answer Results](#answer-field--answer-results)
-   * [Archive Buttons](#archive-buttons)
-   * [Daily Puzzle & Hint Section](#daily-puzzle--hint-section)
-   * [Progression](#progression)
-   * [Future Plans](#future-plans)
-- [Styling Choices](#styling-choices)
-   * [Color Palette](#color-palette)
-   * [Typography](#typography)
-   * [Favicon](#favicon)
-- [Device Testing Results & Known Issues](#device-testing-results--known-issues)
+ - [Design Goals And Features](#design-goals-and-features)
+ - [Device Testing Results & Known Issues](#device-testing-results--known-issues)
    * [Devices & Browsers Used For Testing](#devices--browsers-used-for-testing)
    * [CI Linter Testing](#ci-linter-testing)
    * [Bugs](#bugs)
      - [Solved Issues](#solved-issues)
-- [Deployment](#deployment)
+ - [Deployment](#deployment)
   * [Github Pages](#github-pages)
-- [Technologies Used](#technologies-used)
+ - [Technologies Used](#technologies-used)
   * [Python Libraries](#python-libraries)
-- [Credits](#credits)
+ - [Credits](#credits)
   * [Code](#code)
  
  
@@ -47,103 +37,7 @@ WeatherWatch is a Python based command-line interface which allows users to acce
  1. As a returning user, I would like to be able to check new forecasts quickly and easily
  2. As a returning user, I would like to be able to check other locations weather from both a future and historical standpoint(i.e. for travel purposes)
 
-## Features 
-
-### Index.html features
-
-#### Header Section
-
-What we have in the banner for the site includes the CiNAMEa title which we discuss the intentions regarding in the typography section. We also have our help icon located in the header which allows users easy access to the help overlay should they need any guidance as to how to interact with the site on their initial visit. Finally, this section is bordered above and below by a filmstrip-like image incorporating the theme and focus of the site. 
-
-| Laptop/Desktop Banner |
-| --- |
-| ![Desktop Banner](readme/desktop-banner.png) |
-
-| Mobile Banner |
-| --- |
-| ![Mobile Banner](readme/mobile-banner.png) |
-
-#### Answer Field & Answer Results
-| Answer Submission Field |
-| --- |
-| ![Answer Field](readme/form-field.png) |
-
-The first thing a user will see after the banner is the text submission field where they can provide the answer to the current puzzle. The field's initial placeholder text is used to provide that information quickly and easily to a new user with the help option being available if they need any other guidance.
-Below this field are the six boxes used to show the status of the day's puzzle which will change colour as the user uses up their daily guess count.
-
-| Suggestion Dropdown |
-| --- |
-| ![Suggestion List](readme/suggestions.png) |
-
-Upon entering any text in the answer field, the user will be presented with a list of titles that match the input they have provided thus far, with additional text narrowing down their choices available. Users can select from this list to autopopulate the answer field or can continue to type their answer freely with the answer check being case insensitive.
-
-| Results Content |
-| --- |
-| ![Answer Results](readme/results.png)|
-
-Upon either guessing the answer correctly or using all six guesses incorrectly, the answer submission field will then be replaced by the results content which will let users know if they have guessed successfully or unsuccessfully. This also includes a countdown timer to let them know when the next puzzle will be available to answer.
-
-#### Archive Buttons
-
-| Archive Buttons(Desktop) | Archive Buttons(Mobile) |
-| --- | --- |
-| ![Archive Buttons - Desktop](readme/archive-desktop.png)| ![Archive Buttons - Mobile](readme/archive-mobile.png)
-
-Once a user has completed the day's puzzle either successfully or unsuccessfully, they'll be given the option to view the archives allowing them access to all previous puzzles. By clicking on this option, the archives will be generated up until the current date and once clicked, any button will load that particular puzzle and reset the page to allow them to continue. As you can see, due to the flex nature of the buttons, we reduce the number shown per row on mobile as compared to larger devices in order to allow ease of access to the buttons.
-
-#### Daily Puzzle & Hint Section
-
-The structure of the puzzle itself is then based on the device in question, to avoid the need to reduce the image size on mobile devices, the puzzle and hint section are set to a single-column display with the hints being displayed below the image allowing the image to use the full width of the device as the puzzle progresses. When we move to higher resolution displays, this single-column display then reverts to a dual-column layout with the image taking up the left half of the page and the hints on the right.
-
-| Puzzle & Hints(Desktop) | Puzzle & Hints(Mobile) |
-| --- | --- |
-| ![Puzzle & Hints - Desktop](readme/puzzle-desktop.png)| ![Puzzle & Hints - Mobile](readme/puzzle-mobile.png)
-
-#### Progression
-
-When a user accesses the site for the first time in a day, the hint section will be empty and there will be a small snippet of the daily image available to view. If they guess correctly or guess incorrectly 6 times, the full image will then be displayed. Otherwise, as the user guesses incorrectly prior to the results being displayed, an additional hint will be provided or more of the image will be revealed as the guesses continue.
-
-| Daily Puzzle(0 Guesses) | Daily Puzzle(3 Guesses) | Daily Puzzle(All Guesses)
-| --- | --- | --- |
-| ![Daily Puzzle - 0](readme/puzzle0.png) | ![Daily Puzzle - 3](readme/puzzle3.png) | ![Daily Puzzle - All](readme/puzzle6.png) |
-
-| Hint List(0 Guesses) | Hint List(3 Guesses) | Hint List(All Guesses)
-| --- | --- | --- |
-| ![Hint List - 0](readme/hints0.png) | ![Hint List - 3](readme/hints3.png) | ![Hint List - All](readme/hints6.png) |
-
-
-### Future Plans
-
-* To implement content on a continuous basis, with the current project there is a fixed number of puzzles available, with continuous content updates this would remove the current need to loop back on previously used puzzles and also reduce the code load as there would be no need for looping
-* To implement archive retention, currently when the archive is accessed the guesses are not retained locally when accessing the site, ideally each puzzle would store it's own unique values for guesses attempted allowing users to see how they performed on previous days
-
-## Styling Choices
-
-### Color Palette
-![Color Palette](readme/palette.png)
-
-In keeping with other sites in the same genre, the site itself uses a very simple and focused colour palette as the eye should be drawn to the puzzle as the main intention of the site. Using a spread of dark to light grays to keep a general theme in place without any contrast issues
-
-The red(#D30000),green(#3BB143) and grey(#666666) shades are used for the guess boxes to denote unused/incorrect and correct guesses, these choices are due to their ease of understanding by users from their common usage with the red for incorrect, green for correct and grey for unanswered.
-
-### Typography
-
-Nixie One:  
-![Nixie One](readme/nixie_one.png)  
-Movie Times:  
-![Movie Times](readme/movie_times.png)  
-Due Credit:  
-![Due Credit](readme/due_credit.png)  
-
-For the font choices for the site, we have three primary options, Nixie One, Movie Times & Due Credit which can all be seen above. These choices were to keep in the theme of and to suggest the imagery of movies. With Movie Times being used for the logo title, the font itself with the film strip borders gives an clear initial idea as to what the site itself would be regarding but it was a choice to use this font sparingly due to the large filmstrip borders.
-
-Nixie One and Due Credit are then used for the main content of the page, with Due Credit evoking the text from movie poster credits and being used for the hint and answer titles. Nixie One then being used for the text content such as the hints/answers and the overlay's help text, similarly to Due Credit, this was chosen due to being a typeface similar to typewriter script as would be seen commonly in movies. 
-
-### Favicon
-
-![CiNAMEa Favicon](readme/cinamea-icon.png)
-
-The favicon was personally created the site, reusing the filmstrip imagery from the banner border enclosing a question mark symbol to represent the two primary aspects of the site, movies and puzzles.
+## Design Goals And Features 
 
 ## Device Testing Results & Known Issues
 
