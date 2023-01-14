@@ -3,7 +3,7 @@
 [https://fergalcob.github.io/CiNAMEa/](https://fergalcob.github.io/CiNAMEa/)
 
 ## Table of Contents
- - [Site Inspiration](#site-inspiration)
+ - [App Goals](#app-goals)
  - [User Stories](#user-stories)
    * [First Time User](#first-time-user)
  - [Features](#features)
@@ -32,22 +32,22 @@
   * [Code](#code)
  
  
-## Site Inspiration
+## App Goals
 
-The inspiration for this site came from the recent trend of daily puzzle games beginning with [Wordle](https://www.nytimes.com/games/wordle/index.html) and continuing into more trivia based options such as [Heardle](https://www.spotify.com/heardle/?), [Framed](https://framed.wtf/) and [GuessThe.Game](https://guessthe.game/) among others. These sites all follow the same general set-up of a daily, 6 guesses puzzle. CiNAMEa takes from these and creates a daily puzzle wherein the user is shown a portion of a movie poster with the title removed and based on their guesses are shown additional portions of the image or are provided hints to the film's identity.
+WeatherWatch is a Python based command-line interface which allows users to access both upcoming weather forecasts and also historical weather data trends. The app would be intended for both day-to-day use with regular users being able to access the upcoming weather forecast for any location they would need and also for informational purposes, with the historical data being useable to understand how changes in the environment can affect the weather over time for a given area.
 
 ## User Stories
 
 ### First Time User
 
- 1. As a first time user, I want to be able to easily understand the goal of the site
- 2. As a first time user, I want to clearly understand how to interact with the site's content
- 3. As a first time user, I want to be able to access previous content on the site used for prior puzzles
+ 1. As a first time user, I want to be able to easily understand the aims and use of the app
+ 2. As a first time user, I want to clearly understand how to interact with the app's content
+ 3. As a first time user, I want to be able to access the data I need quickly and easily and have it presented in a clear and understandable format
 
 ### Returning User
 
- 1. As a returning user, I would like to be find new content on a daily basis
- 2. As a returning user, I would like to have easy access to content I may have missed if I have not accessed the site for some time
+ 1. As a returning user, I would like to be able to check new forecasts quickly and easily
+ 2. As a returning user, I would like to be able to check other locations weather from both a future and historical standpoint(i.e. for travel purposes)
 
 ## Features 
 
