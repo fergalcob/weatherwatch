@@ -27,6 +27,7 @@
 - [Deployment](#deployment)
   * [Github Pages](#github-pages)
 - [Technologies Used](#technologies-used)
+  * [Python Libraries](#python-libraries)
 - [Credits](#credits)
   * [Code](#code)
  
@@ -202,20 +203,13 @@ The favicon was personally created the site, reusing the filmstrip imagery from 
 5. At that point, the page was then live at [https://fergalcob.github.io/Mail-Matters/](https://fergalcob.github.io/Mail-Matters/)
 
 ## Technologies Used
-* [HTML5](https://en.wikipedia.org/wiki/HTML5)
-   - Used to build the underlying structure of the website and to add the content for users
-* [CSS](https://en.wikipedia.org/wiki/CSS)
-   - Used to provide the styling necessary to set the final layout of the site and to implement responsiveness across device types
-* [GIMP](https://www.gimp.org/) 
-   - Used for scaling the banner images for responsiveness
-* [Am I Responsive](https://ui.dev/amiresponsive) 
-   - For testing and creating the Readme banner image
-* [Coolors](https://coolors.co)
-  - Used to create the color palette shown in the Readme
-* [jQuery](https://jquery.com/)
-  - Used to reload the text input field after selecting a puzzle from the Archives
-* [Favicon.io](https://favicon.io/)
-  - Used for generating the favicon set and code from the personally  created icon
+### Python Libraries
+
+[Google Maps](https://github.com/googlemaps/google-maps-services-python) - Used to retrieve the latitude and longitude of the locations entered by users via the Google Places API
+[openmeteo_py](https://github.com/m0rp43us/openmeteopy) - Used to retrieve the weather data from Open Meteo's API
+[art](https://github.com/sepandhaghighi/art) - Used to generate the WeatherWatch logo art
+[readchar](https://github.com/magmax/python-readchar) - Used to monitor keypresses in order for return home functions to be called
+[rich](https://github.com/Textualize/rich) - Used in formatting of the weather tables and styling of the text
 
 ## Credits
 ### Code
