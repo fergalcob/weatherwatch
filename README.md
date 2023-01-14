@@ -19,9 +19,7 @@
    * [Favicon](#favicon)
 - [Device Testing Results & Known Issues](#device-testing-results--known-issues)
    * [Devices & Browsers Used For Testing](#devices--browsers-used-for-testing)
-   * [W3C Validator & Lighthouse Testing](#w3c-validator--lighthouse-testing)
-   * [Jigsaw Validation Of CSS](#jigsaw-validation-of-css)
-   * [JSHint Validation Of Javascript](#jshint-validation-of-javascript)
+   * [CI Linter Testing](#ci-linter-testing)
    * [Bugs](#bugs)
      - [Solved Issues](#solved-issues)
 - [Deployment](#deployment)
@@ -163,19 +161,14 @@ The favicon was personally created the site, reusing the filmstrip imagery from 
 3. Android Tablet(Lenovo Tab)
     * Chrome
 
-### W3C Validator & Lighthouse Testing
+### CI Linter Testing
 
 <details>
-  <summary>index.html results - Validator and Lighthouse</summary>
+  <summary>run.py - Linter Results</summary>
   
-  #### W3C Validator Results
-  ![Testing Results - contact.html](readme/w3c-html-validation.png)
+  #### run.py - Linter Results
+  ![Testing Results - run.py](README/linter.png)
   
-  #### Lighthouse Results - Desktop
-  ![Testing Results - contact.html](readme/lighthouse-desktop.png)
-  
-  #### Lighthouse Results - Mobile
-  ![Testing Results - contact.html](readme/lighthouse-mobile.png)
 </details>
 
 </details>
