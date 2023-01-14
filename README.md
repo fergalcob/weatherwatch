@@ -1,4 +1,4 @@
-![Banner Image](readme/AmIResponsive.png)
+![Banner Image](READMEN/banner.png)
 ## Live Link
 [https://fergalcob.github.io/CiNAMEa/](https://fergalcob.github.io/CiNAMEa/)
 
