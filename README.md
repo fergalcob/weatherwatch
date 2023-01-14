@@ -8,7 +8,7 @@
    * [First Time User](#first-time-user)
    * [Returning Users](#returning-users)
  - [Design Goals And Features](#design-goals-and-features)
-   * [User Experience Flowchart](#user-experience-flowchart)
+   * [Design Flow](#design-flow)
  - [Device Testing Results & Known Issues](#device-testing-results--known-issues)
    * [Devices & Browsers Used For Testing](#devices--browsers-used-for-testing)
    * [CI Linter Testing](#ci-linter-testing)
