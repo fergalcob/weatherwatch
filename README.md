@@ -47,9 +47,34 @@ WeatherWatch is a Python based command-line interface which allows users to acce
   <summary>User Experience Flowchart</summary>
   
   #### User Experience Flowchart
+  
   ![Flowchart](README/WeatherWatch3.png)
   
 </details>
+  
+  #### Landing Screen
+  
+  ![Landing Screen - Initial](README/landing-screen1.png)
+  ![Landing Screen - Expanded](README/landing-screen2.png)
+  
+  #### 24 Hour and 7 Day Forecasts
+  
+  ![24 Hour Forecast](README/24-hour-forecast.png)
+  ![7 Day Forecast](README/7-day-forecast.png)
+  
+  #### Hottest And Coldest Days
+  
+  ![Hottest And Coldest Days - Intro](README/hot-and-cold.png)
+  ![Hottest And Coldest Days - Results](README/hot-and-cold2.png)
+  
+  #### Changes In Weather
+  
+  ![Changes In Weather - Intro](README/trends.png)
+  ![Changes In Weather - Expanded](README/trends2.png)
+  ![Changes In Weather - Results](README/trends3.png)
+  
+  
+
 
 ## Device Testing Results & Known Issues
 
