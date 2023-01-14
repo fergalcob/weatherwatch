@@ -171,14 +171,6 @@ The favicon was personally created the site, reusing the filmstrip imagery from 
   
 </details>
 
-</details>
-
-### Jigsaw Validation Of CSS
-![Testing Results - CSS](readme/w3c-css-validation-test.png)
-
-### JSHint Validation Of Javascript
-![Testing Results - JS](readme/jshint-test-results.png)
-
 ### Bugs
 
 #### Solved Issues
