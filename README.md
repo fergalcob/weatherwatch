@@ -6,7 +6,9 @@
  - [App Goals](#app-goals)
  - [User Stories](#user-stories)
    * [First Time User](#first-time-user)
+   * [Returning Users](#returning-users)
  - [Design Goals And Features](#design-goals-and-features)
+   * [User Experience Flowchart](#user-experience-flowchart)
  - [Device Testing Results & Known Issues](#device-testing-results--known-issues)
    * [Devices & Browsers Used For Testing](#devices--browsers-used-for-testing)
    * [CI Linter Testing](#ci-linter-testing)
@@ -38,6 +40,16 @@ WeatherWatch is a Python based command-line interface which allows users to acce
  2. As a returning user, I would like to be able to check other locations weather from both a future and historical standpoint(i.e. for travel purposes)
 
 ## Design Goals And Features 
+
+### Design Flow
+
+<details>
+  <summary>User Experience Flowchart</summary>
+  
+  #### User Experience Flowchart
+  ![Flowchart](README/weatherwatch3.png)
+  
+</details>
 
 ## Device Testing Results & Known Issues
 
