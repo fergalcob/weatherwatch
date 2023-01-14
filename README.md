@@ -94,6 +94,13 @@ WeatherWatch is a Python based command-line interface which allows users to acce
 5. At that point, the page was then live at [https://fergalcob.github.io/Mail-Matters/](https://fergalcob.github.io/Mail-Matters/)
 
 ## Technologies Used
+
+[Python](https://www.python.org/) - Main language used in the project for all aspects
+
+[Diagrams.net](https://www.diagrams.net/) - Used to design the flowchart in the README file
+
+[Heroku](https://www.heroku.com/) - For deploying the finished code
+
 ### Python Libraries
 
 [Google Maps](https://github.com/googlemaps/google-maps-services-python) - Used to retrieve the latitude and longitude of the locations entered by users via the Google Places API
