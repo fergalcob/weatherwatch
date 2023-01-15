@@ -15,7 +15,6 @@
    * [Hottest And Coldest Days](#hottest-and-coldest-days)
    * [Changes In Weather](#changes-in-weather)
  - [Device Testing Results & Known Issues](#device-testing-results--known-issues)
-   * [Devices & Browsers Used For Testing](#devices--browsers-used-for-testing)
    * [CI Linter Testing](#ci-linter-testing)
    * [Bugs](#bugs)
      - [Solved Issues](#solved-issues)
@@ -104,20 +103,6 @@ WeatherWatch is a Python based command-line interface which allows users to acce
 
 
 ## Device Testing Results & Known Issues
-
-### Devices & Browsers Used For Testing
-
-1. Laptop(Acer Nitro 5 & Lenovo Ideapad 5)
-    * Chrome
-    * Edge
-    * Firefox
-
-2. Android Phone(Realme 9 Pro & Samsung S21)
-    * Chrome
-    * Firefox
-
-3. Android Tablet(Lenovo Tab)
-    * Chrome
 
 ### CI Linter Testing
 
