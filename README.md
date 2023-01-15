@@ -60,25 +60,45 @@ WeatherWatch is a Python based command-line interface which allows users to acce
   #### Landing Screen
   
   ![Landing Screen - Initial](README/landing-screen1.png)
+  
+  Upon loading users are greeted with the landing screen logo and the introductory text. Users are given a brief overview of the information they can receive through the app and are then prompted to enter the location they are looking for. Once the information is entered, the entry is passed for validation and if invalid, they are informed of this and asked to re-enter the location data. If valid then the selection menu is shown to the user as follows:
+  
   ![Landing Screen - Expanded](README/landing-screen2.png)
+  
+  When the menu is shown, each item gives a brief description of what they do and the user is then prompted for their selection from the numbered list. This selection is then validated and if valid, then the requested selection is generated. If invalid, once again the user is prompted to re-enter their selection.
   
   #### 24 Hour and 7 Day Forecasts
   
   ![24 Hour Forecast](README/24-hour-forecast.png)
-  ![7 Day Forecast](README/7-day-forecast.png)
+  ![7 Day Forecast](README/7-day-forecast.png) 
+  
+  The 24-Hour and 7-Day Forecasts allow the user to see the upcoming weather data in an easily readable table, showing clearly the date/time, temperature, weather and expected rain/snow fall. While the weather data returned from the Open Meteo represents the upcoming weather type as a numerical weathercode, these weathercodes are converted into understandable forecasts prior to being added to the table.
   
   #### Average Weather For A Timeperiod
   
   #### Hottest And Coldest Days
   
   ![Hottest And Coldest Days - Intro](README/hot-and-cold.png)
+  
+  Upon selecting this option, users are initially presented with an extended explanation of what this option is intended for, giving users the ability to search for the hottest and coldest days of a range of years. They are then prompted to enter the number of years they wish to explore and if valid, the timeframe is generated and the query is passed.
+  
+  As the date format is constant in the data returned we are able to remove the year from the dates returned and subsequently create a list of individual dates and their associated temperatures. These days are then totalled and averaged then sorted from highest to lowest. This data is then iterated upon to create the following table showing the 5 hottest and coldest days on average giving users a general idea of what days tend towards high and low temperatures over a given period.
+  
   ![Hottest And Coldest Days - Results](README/hot-and-cold2.png)
   
   #### Changes In Weather
   
   ![Changes In Weather - Intro](README/trends.png)
+  
+  The trends in weather option gives users the ability to see changes in weather for a given month over a number of years which as an informational tool allows users to see how environmental changes over years has affected the weather patterns of an area. Users are prompted to enter the month they wish to view the data for followed by the number of years. These options are both tested for validity and if successful, users are then prompted to select which set of data they wish to view as in the following screenshot.
+  
   ![Changes In Weather - Expanded](README/trends2.png)
+  
+  With a valid query from the user, they are then shown the option to select between seeing temperature changes or precipitation changes over time. When the selection is chosen, the selected data is then pulled from the data returned from the API query and then the following table is generated.
+  
   ![Changes In Weather - Results](README/trends3.png)
+  
+  After the table is generated, the user is given multiple choices on how to proceed, they can return to the initial menu to change the month/number of years explored, to return to the previous menu to change the weather data being shown or to return home to the main menu.
   
   
 
