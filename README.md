@@ -14,7 +14,7 @@
    * [Historical Weather Data](#historical-weather-data)
    * [Hottest And Coldest Days](#hottest-and-coldest-days)
    * [Changes In Weather](#changes-in-weather)
- - [Device Testing Results & Known Issues](#device-testing-results--known-issues)
+ - [Testing Results & Known Issues](#testing-results--known-issues)
    * [CI Linter Testing](#ci-linter-testing)
    * [Bugs](#bugs)
      - [Solved Issues](#solved-issues)
@@ -177,37 +177,3 @@ WeatherWatch is a Python based command-line interface which allows users to acce
 ### Code
 
 The OWmanager_historical class found in the historical_data.py file is based on the OWmanager class found in the [openmeteopy](https://github.com/m0rp43us/openmeteopy) library. The current version of this library does not currently support querying OpenMeteo's Historical Weather API and so this class needed to be updated in order to query the Historical API endpoint. Additional parameters(Start Dates & End Dates) needed to be passed to the historical class and so additional testing needed to be added to this class also to ensure that the new data provided returned a valid query.
-
-
-
-
-
-Welcome fergalcob,
-
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
-
-## Reminders
-
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
