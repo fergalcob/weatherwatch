@@ -219,3 +219,25 @@ def weather_table_hourly(meteo_today):
         returnHome = readchar.readkey()
     if returnHome == readchar.key.ENTER:
         home()
+
+
+"""
+Takes the time range from user's input and retrieve
+the weather for the timeframe provided then
+display in table format.
+"""
+
+
+def weather_table_historical(lat, lon):
+    os.system('cls||clear')
+    print()
+    historical_weather_intro = Text("Historical Weather Data", justify="left")
+    historical_weather_intro.style = Style(underline=True, bold=True)
+    console.print(historical_weather_intro,
+                  "\n \nLooking for weather data from a specific"
+                  " time? Here you can search through 60 years of past weather"
+                  " data  beginning with 2022 and see how the weather"
+                  " was on the dates of your choice! Just enter in your"
+                  " start date and end dates in the YYYY-MM-DD format"
+                  "(i.e. 2022-10-12) and we'll retrieve"
+                  " that data for you! \n")
