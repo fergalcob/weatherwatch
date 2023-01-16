@@ -241,3 +241,50 @@ def weather_table_historical(lat, lon):
                   " start date and end dates in the YYYY-MM-DD format"
                   "(i.e. 2022-10-12) and we'll retrieve"
                   " that data for you! \n")
+    while True:
+        try:
+            start_date = (Prompt.ask
+                          ("Enter the starting date"
+                           " of your search(YYYY-MM-DD)"))
+            end_date = (Prompt.ask
+                        ("Enter the end date of your search(YYYY-MM-DD)"))
+            options_historical = \
+                Options_Historical(lat, lon, start_date, end_date)
+            mgr = OWmanager_historical(options_historical,
+                                       daily.all())
+            meteo = mgr.get_data_historical()
+            table = Table(title=f"Average Weather for {start_date}"
+                          f" - {end_date} - {location}")
+            table.add_column("Date Range", justify="center",
+                             style="cyan", no_wrap=True)
+            table.add_column("Temperature", justify="center",
+                             style="cyan", no_wrap=True)
+            table.add_column("Weather", justify="center",
+                             style="cyan", no_wrap=True)
+            table.add_column("Precipitation \n(Rain/Snowfall)",
+                             justify="center", style="cyan", no_wrap=True)
+            for w, x, y, z in zip(meteo['daily']['precipitation_sum'],
+                                  meteo['daily']['temperature_2m_max'],
+                                  meteo['daily']['time'],
+                                  meteo['daily']['weathercode']):
+                table.add_row(y,
+                              f"{str(x)}"
+                              f"{meteo['daily_units']['temperature_2m_max']}",
+                              weather_converter(z),
+                              f"{str(w)}"
+                              f"{meteo['daily_units']['precipitation_sum']}")
+            break
+        except KeyError:
+            print(f"Invalid date range entered, please ensure the dates"
+                  f" are in the format YYYY-MM-DD,"
+                  f" you have entered {start_date} & {end_date}")
+    os.system('cls||clear')
+    table = Align(table, align="center")
+    print()
+    console.print(table)
+    print("\n Press enter to return home")
+    returnHome = readchar.readkey()
+    while returnHome is not readchar.key.ENTER:
+        returnHome = readchar.readkey()
+    if returnHome == readchar.key.ENTER:
+        home()
