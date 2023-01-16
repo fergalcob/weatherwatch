@@ -1,7 +1,6 @@
 # Your code goes here.
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
-
 import googlemaps
 from openmeteo_py import Hourly, Daily, Options, OWmanager
 from historical_data import *
@@ -10,6 +9,7 @@ import datetime
 from art import *
 import readchar
 import os
+import sys
 from openmeteo_py.constants import *
 from openmeteo_py.timezones import *
 
@@ -27,6 +27,7 @@ daily.daily_params.append("rain_sum")
 daily.daily_params.append("snowfall_sum")
 current_weather = True
 console = Console()
+sys.tracebacklimit = 0
 
 """
 The following converts the weathercodes provided by the API query
@@ -243,17 +244,29 @@ def weather_table_historical(lat, lon):
                   " that data for you! \n")
     while True:
         try:
-            start_date = (Prompt.ask
-                          ("Enter the starting date"
-                           " of your search(YYYY-MM-DD)"))
-            end_date = (Prompt.ask
-                        ("Enter the end date of your search(YYYY-MM-DD)"))
+            while True:
+                try:
+                    start_date = (Prompt.ask
+                                  ("Enter the starting date"
+                                   " of your search(YYYY-MM-DD)"))
+                    end_date = (Prompt.ask
+                                ("Enter the end date of your search"
+                                 "(YYYY-MM-DD)""))
+                    if len(start_date) != 10 or len(end_date) != 10:
+                        raise ValueError()
+                    else:
+                        break
+                except ValueError:
+                    print("Invalid characters or incomplete date detected,"
+                          " the date you entered should be in the"
+                          " format YYYY-MM-DD")
+
             options_historical = \
                 Options_Historical(lat, lon, start_date, end_date)
             mgr = OWmanager_historical(options_historical,
                                        daily.all())
             meteo = mgr.get_data_historical()
-            table = Table(title=f"Historical Weather for {start_date}"
+            table = Table(title=f"Average Weather for {start_date}"
                           f" - {end_date} - {location}")
             table.add_column("Date Range", justify="center",
                              style="cyan", no_wrap=True)
@@ -276,8 +289,8 @@ def weather_table_historical(lat, lon):
             break
         except KeyError:
             print(f"Invalid date range entered, please ensure the dates"
-                  f" are in the format YYYY-MM-DD,"
-                  f" you have entered {start_date} & {end_date}")
+                  f" are within the past 60 years and in the format"
+                  f" YYYY-MM-DD, you have entered {start_date} & {end_date}")
     os.system('cls||clear')
     table = Align(table, align="center")
     print()
@@ -482,7 +495,7 @@ def weather_trends(lat, lon):
         table = Align(table, align="center")
         console.print(table)
         menu_reset()
-        """
+    """
     Convert month entered to numerical value in order to extract
     from returned API query data
     """
