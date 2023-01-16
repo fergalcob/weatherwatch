@@ -649,6 +649,35 @@ def home():
     heading1.style = Style(underline=True, bold=True)
     heading2 = Text("Trends & Historical Data", justify="center")
     heading2.style = Style(underline=True, bold=True)
+    """
+    Take user input for the location value and set the common variables
+    which will be used across multiple functions(lat,lon,options)
+    """
+    global location
+    while True:
+        try:
+            """
+            Call the Google Maps Places API in otherto geocode
+            the location data and return the latitude and
+            longitude to be passed to the OpenMeteo Weather API
+            """
+            location = (Prompt.ask
+                        (" Enter the location you're"
+                         " looking for weather data on"))
+            gmaps = (googlemaps.Client
+                     (key='AIzaSyBGHzaRyth1cLPCn_Ur9WzTcx2mmqIjW40'))
+            geocode_result = \
+                gmaps.find_place(location, "textquery", fields=['geometry'])
+            lat = (geocode_result["candidates"][0]
+                   ["geometry"]["location"]["lat"])
+            lon = (geocode_result["candidates"][0]
+                   ["geometry"]["location"]["lng"])
+            break
+        except IndexError:
+            print(" No location found, please try again. \n")
+        except googlemaps.exceptions.ApiError:
+            print(" Invalid entry detected, note this selection"
+                  " should not be empty, please try again. \n")
                             
 
 
