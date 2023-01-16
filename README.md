@@ -19,11 +19,11 @@
    * [Bugs](#bugs)
      - [Solved Issues](#solved-issues)
  - [Deployment](#deployment)
-  * [Heroku](#heroku)
+   * [Heroku](#heroku)
  - [Technologies Used](#technologies-used)
-  * [Python Libraries](#python-libraries)
+   * [Python Libraries](#python-libraries)
  - [Credits](#credits)
-  * [Code](#code)
+   * [Code](#code)
  
  
 ## App Goals
