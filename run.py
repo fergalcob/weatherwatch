@@ -606,6 +606,36 @@ def weather_trends(lat, lon):
         except KeyError:
             print('Invalid input detected, '
                   ' please enter a valid number of years(0-60).')
+
+    weather_selection_menu()
+
+
+"""
+Create the initial landing screen and accept user input for location
+"""
+
+
+def home():
+    """
+    Determine which option is selected
+    by the user and call the specific function
+    """
+    def input(quote):
+        match quote:
+            case "1":
+                weather_table(meteo_today)
+            case "2":
+                weather_table_hourly(meteo_today)
+            case "3":
+                weather_table_historical(lat, lon)
+            case "4":
+                total_temps(lat, lon)
+            case "5":
+                weather_trends(lat, lon)
+            case _:
+                print(" Please enter a valid selection")
+                selection = Prompt.ask(" Please choose an option")
+                input(selection)
                             
 
 
