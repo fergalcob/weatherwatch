@@ -453,3 +453,20 @@ def weather_trends(lat, lon):
         console.print(table)
         menu_reset()
 
+
+        def precipitation_table(weather_period):
+        os.system('cls||clear')
+        print()
+        table = Table(title=f"Monthly Precipitation Averages- {location}")
+        table.add_column("Year",
+                         justify="center", style="cyan", no_wrap=True)
+        table.add_column("Average\n Precipitation\n Totals",
+                         justify="center", style="cyan", no_wrap=True)
+        table.add_column("Average\n Rainfall",
+                         justify="center", style="cyan", no_wrap=True)
+        table.add_column("Average\n Snowfall",
+                         justify="center", style="cyan", no_wrap=True)
+        table.add_column("Average\n Hours Of\n Precipitation.",
+                         justify="center", style="cyan", no_wrap=True)
+
+
