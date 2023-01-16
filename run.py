@@ -425,3 +425,18 @@ def weather_trends(lat, lon):
                 weather_trends(lat, lon)
             elif returnHome == "2":
                 weather_selection_menu()
+
+    def temperature_table(weather_period):
+        os.system('cls||clear')
+        print()
+        table = Table(title=f"Monthly Temperature Averages - {location}")
+        table.add_column("Year", justify="center", style="cyan", no_wrap=True)
+        table.add_column("Average\n Max\n Temperature",
+                         justify="center", style="cyan", no_wrap=True)
+        table.add_column("Average\n Min\n Temperature",
+                         justify="center", style="cyan", no_wrap=True)
+        table.add_column("Apparent\n Temperature\n Max Avg.",
+                         justify="center", style="cyan", no_wrap=True)
+        table.add_column("Apparent\n Temperature\n Min Avg.",
+                         justify="center", style="cyan", no_wrap=True)
+
