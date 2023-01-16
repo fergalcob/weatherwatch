@@ -541,6 +541,38 @@ def weather_trends(lat, lon):
                                                  ['snowfall_sum']),
                                                  (meteo['daily']
                                                   ['precipitation_hours'])):
+                """
+                As the position of the data is returned in a consistent manner,
+                the year and month positions are sliced to create
+                a yearly list.
+                """
+                if weather_period.get(a[:4:]) and a[5:7] == months:
+                    weather_period[a[:4:]]["temps_max"].append(b)
+                    weather_period[a[:4:]]["temps_min"].append(c)
+                    weather_period[a[:4:]]["apparent_max"].append(d)
+                    weather_period[a[:4:]]["apparent_min"].append(e)
+                    weather_period[a[:4:]]["total_precipitation"].append(f)
+                    weather_period[a[:4:]]["rainfall_total"].append(g)
+                    weather_period[a[:4:]]["snowfall_total"].append(h)
+                    weather_period[a[:4:]]["hours_of_precipitation"].append(i)
+                elif a[5:7] == months:
+                    weather_period.update({a[:4:]: {"temps_max": [],
+                                                    "temps_min": [],
+                                                    "apparent_max": [],
+                                                    "apparent_min": [],
+                                                    "total_precipitation": [],
+                                                    "rainfall_total": [],
+                                                    "snowfall_total": [],
+                                                    "hours_of_" +
+                                                    "precipitation": []}})
+                    weather_period[a[:4:]]["temps_max"].append(b)
+                    weather_period[a[:4:]]["temps_min"].append(c)
+                    weather_period[a[:4:]]["apparent_max"].append(d)
+                    weather_period[a[:4:]]["apparent_min"].append(e)
+                    weather_period[a[:4:]]["total_precipitation"].append(f)
+                    weather_period[a[:4:]]["rainfall_total"].append(g)
+                    weather_period[a[:4:]]["snowfall_total"].append(h)
+                    weather_period[a[:4:]]["hours_of_precipitation"].append(i)
                             
 
 
