@@ -187,7 +187,7 @@ def weather_table_hourly(meteo_today):
     table.add_column("Precipitation", justify="center",
                      style="cyan", no_wrap=True)
 
-        for counter, (w, x, y, z) in \
+    for counter, (w, x, y, z) in \
             enumerate(list(zip(meteo_today['hourly']['precipitation'],
                                meteo_today['hourly']['apparent_temperature'],
                                meteo_today['hourly']['time'],
@@ -383,6 +383,7 @@ def new_weather_table(sorting):
     if returnHome == readchar.key.ENTER:
         home()
 
+
 def weather_trends(lat, lon):
     os.system('cls||clear')
     print()
@@ -395,6 +396,7 @@ def weather_trends(lat, lon):
                   " choose to see how temperature or precipitation has changed"
                   " for your selection has changed over time, including"
                   " changes in the highs and lows of the scale. \n")
+
     def weather_selection_menu():
         print('\n \t 1. Find the changes in temperature'
               ' for the selected month. \n'
@@ -452,7 +454,6 @@ def weather_trends(lat, lon):
         table = Align(table, align="center")
         console.print(table)
         menu_reset()
-
 
     def precipitation_table(weather_period):
         os.system('cls||clear')
@@ -698,6 +699,3 @@ def home():
 
 
 home()
-                            
-
-
