@@ -498,5 +498,15 @@ def weather_trends(lat, lon):
                       "november": "11",
                       "december": "12"}
     months = Prompt.ask("Which month do you want to explore?(e.g. October)")
+    while True:
+        if months.lower() in list_of_months:
+            months = list_of_months[months.lower()]
+            break
+        else:
+            print("Invalid selection entered,"
+                  " please enter the full name of"
+                  " the month you wish to explore")
+            months = Prompt.ask("Which month do you want"
+                                " to explore?(e.g. October)")
 
 
