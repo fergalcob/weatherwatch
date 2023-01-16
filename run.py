@@ -636,6 +636,19 @@ def home():
                 print(" Please enter a valid selection")
                 selection = Prompt.ask(" Please choose an option")
                 input(selection)
+    os.system('cls||clear')
+    print()
+    title = text2art("WeatherWatch")
+    print(title,
+          '\n Welcome to WeatherWatch, your home for weather forecasting'
+          ' and historical weather data. \n Here can find the forecast'
+          ' for the next 7 days or the next 24 hours in hourly increments.'
+          '\n You can also search the past 60 years of weather data for'
+          ' information on weather trends. \n')
+    heading1 = Text("Forecasts", justify="left")
+    heading1.style = Style(underline=True, bold=True)
+    heading2 = Text("Trends & Historical Data", justify="center")
+    heading2.style = Style(underline=True, bold=True)
                             
 
 
