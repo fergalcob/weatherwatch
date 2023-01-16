@@ -352,3 +352,33 @@ def average_and_sort(all_days):
     sorted_days = sorted(all_days.items(), key=lambda x: x[1])
     new_weather_table(sorted_days)
 
+
+"""
+Present the highest and lowest values calculated by
+average_and_sort() function in the weather table
+"""
+
+
+def new_weather_table(sorting):
+    os.system('cls||clear')
+    print()
+    table = Table(title=f"Hottest & Coldest Days On Average - {location}")
+    table.add_column("Date", justify="center", style="cyan", no_wrap=True)
+    table.add_column("Coldest Temperatures",
+                     justify="center", style="cyan", no_wrap=True)
+    table.add_column("Date", justify="center", style="cyan", no_wrap=True)
+    table.add_column("Hottest Temperatures",
+                     justify="center", style="cyan", no_wrap=True)
+    for value in range(0, 5):
+        table.add_row(f"{sorted_days[value][0]}",
+                      f"{str(sorted_days[value][1])}\N{DEGREE SIGN}C",
+                      f"{sorted_days[-value-1][0]}",
+                      f"{str(sorted_days[-value-1][1])}\N{DEGREE SIGN}C")
+    table = Align(table, align="center")
+    console.print(table)
+    print("\n Press enter to return home")
+    returnHome = readchar.readkey()
+    while returnHome is not readchar.key.ENTER:
+        returnHome = readchar.readkey()
+    if returnHome == readchar.key.ENTER:
+        home()
