@@ -47,10 +47,12 @@ WeatherWatch is a Python based command-line interface which allows users to acce
 
 ### Design Flow
 
+The intention of the application is to make it as simple as possible for the user to interact with and provide the necessary inputs in order to prevent errors. Any invalid that a user inputs would be tested for and they would then be reprompted to enter the data with an associated error message to advise them of how to avoid the issue again. The descriptions of each page that a user access that requires additional input will also explain what they would need to provide before the input is made also to help prevent errors.
+
+The initial location input that a user provides is tested for validity and if valid, the latitude and longitude are taken from the Places API response and are stored for use as they would be used in all follow-up Forecast/Historical Weather queries. Error messages are specified based on the type of invalid entry such as year being provided in an incorrect format in the Historical Weather section so
+
 <details>
   <summary>User Experience & Data Flowchart</summary>
-  
-  #### User Experience & Data Flowchart
   
   ![Flowchart](README/WeatherWatch3.png)
   
