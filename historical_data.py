@@ -210,8 +210,6 @@ class Options_Historical():
         if longitude < -180 or longitude > 180:
             raise ValueError(
                 "Longitude should be between -180 and 180 degrees.")
-        if len(start_date) != 10 or len(end_date) != 10:
-            print("The date you entered should be in the format YYYY-MM-DD")
         self.latitude = latitude
         self.longitude = longitude
         self.windspeed_unit = windspeed_unit
