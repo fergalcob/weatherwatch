@@ -253,7 +253,7 @@ def weather_table_historical(lat, lon):
             mgr = OWmanager_historical(options_historical,
                                        daily.all())
             meteo = mgr.get_data_historical()
-            table = Table(title=f"Average Weather for {start_date}"
+            table = Table(title=f"Historical Weather for {start_date}"
                           f" - {end_date} - {location}")
             table.add_column("Date Range", justify="center",
                              style="cyan", no_wrap=True)
