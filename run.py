@@ -412,3 +412,16 @@ def weather_trends(lat, lon):
             case _:
                 print("Please enter a valid selection. \n")
                 weather_selection_menu()
+
+    def menu_reset():
+        print("\n Press 1 to return to date selection,"
+              " 2 for weather options or enter to return home")
+        while True:
+            returnHome = readchar.readkey()
+            if returnHome == readchar.key.ENTER:
+                home()
+                break
+            elif returnHome == "1":
+                weather_trends(lat, lon)
+            elif returnHome == "2":
+                weather_selection_menu()
