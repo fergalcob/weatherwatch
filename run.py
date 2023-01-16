@@ -481,5 +481,22 @@ def weather_trends(lat, lon):
         table = Align(table, align="center")
         console.print(table)
         menu_reset()
+        """
+    Convert month entered to numerical value in order to extract
+    from returned API query data
+    """
+    list_of_months = {"january": "01",
+                      "february": "02",
+                      "march": "03",
+                      "april": "04",
+                      "may": "05",
+                      "june": "06",
+                      "july": "07",
+                      "august": "08",
+                      "september": "09",
+                      "october": "10",
+                      "november": "11",
+                      "december": "12"}
+    months = Prompt.ask("Which month do you want to explore?(e.g. October)")
 
 
