@@ -337,3 +337,18 @@ def total_temps(lat, lon):
             break
         except (ValueError, KeyError):
             print("Please enter a valid number of years to search(0-60)")
+
+
+"""
+Sum up the values of each MM-DD list and averages out the data,
+the data is then sorted to get highest and lowest values in order
+"""
+
+
+def average_and_sort(all_days):
+    for value in all_days:
+        all_days[value] = round(sum(all_days[value]) / len(all_days[value]), 2)
+    global sorted_days
+    sorted_days = sorted(all_days.items(), key=lambda x: x[1])
+    new_weather_table(sorted_days)
+
