@@ -76,7 +76,12 @@ WeatherWatch is a Python based command-line interface which allows users to acce
   #### Historical Weather Data
   
    ![Historical Data - Intro](README/historical1.png)
+   
+   The Historical Weather Data section allows users to input a start date and end date for any period during the 60 years of weather data available through the Historical Weather API. The user is guided through on how to provide the correct format for the dates and their entry will be validated after they have completed the prompts, if invalid they'll be reprompted while being provided the values of the incorrect entries that were made which proved invalid.
+   
    ![Historical Data - Results](README/historical2.png)
+   
+   Once validated, the request is passed to the Historical Weather API and the returned data is output as a table by date showing the range they entered and the results by date, giving the user the temperature, weather and precipitation data in a similar manner to the forecast data.
   
   #### Hottest And Coldest Days
   
