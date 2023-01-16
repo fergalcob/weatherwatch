@@ -382,3 +382,16 @@ def new_weather_table(sorting):
         returnHome = readchar.readkey()
     if returnHome == readchar.key.ENTER:
         home()
+
+def weather_trends(lat, lon):
+    os.system('cls||clear')
+    print()
+    weather_trends_menu = Text("Changes In Weather", justify="left")
+    weather_trends_menu.style = Style(underline=True, bold=True)
+    console.print(weather_trends_menu,
+                  "\n \nLooking to see how weather patterns have changed over"
+                  " years, enter the month you wish to explore and the number"
+                  " of years(up to 60 years of data available). You can then"
+                  " choose to see how temperature or precipitation has changed"
+                  " for your selection has changed over time, including"
+                  " changes in the highs and lows of the scale. \n")
