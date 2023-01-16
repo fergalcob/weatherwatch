@@ -169,3 +169,20 @@ def weather_table(meteo_today):
         returnHome = readchar.readkey()
     if returnHome == readchar.key.ENTER:
         home()
+
+
+"""
+Create the table for the 24 hour weather forecast
+and iterate through the results
+to present the data in a visually consistent style
+"""
+
+
+def weather_table_hourly(meteo_today):
+    table = Table(title=f"24 Hour Forecast - {location}")
+    table.add_column("Time", justify="center", style="cyan", no_wrap=True)
+    table.add_column("Temperature", justify="center",
+                     style="cyan", no_wrap=True)
+    table.add_column("Weather", justify="center", style="cyan", no_wrap=True)
+    table.add_column("Precipitation", justify="center",
+                     style="cyan", no_wrap=True)
