@@ -573,6 +573,39 @@ def weather_trends(lat, lon):
                     weather_period[a[:4:]]["rainfall_total"].append(g)
                     weather_period[a[:4:]]["snowfall_total"].append(h)
                     weather_period[a[:4:]]["hours_of_precipitation"].append(i)
+            """
+            Average all weather data returned by this query
+            """
+            for a in reversed(weather_period):
+                weather_period[a]["temps_max"] = \
+                    round(sum(weather_period[a]["temps_max"])
+                          / len(weather_period[a]["temps_max"]), 2)
+                weather_period[a]["temps_min"] = \
+                    round(sum(weather_period[a]["temps_min"])
+                          / len(weather_period[a]["temps_min"]), 2)
+                weather_period[a]["apparent_max"] = \
+                    round(sum(weather_period[a]["apparent_max"])
+                          / len(weather_period[a]["apparent_max"]), 2)
+                weather_period[a]["apparent_min"] = \
+                    round(sum(weather_period[a]["apparent_min"])
+                          / len(weather_period[a]["apparent_min"]), 2)
+                weather_period[a]["total_precipitation"] = \
+                    round(sum(weather_period[a]["total_precipitation"])
+                          / len(weather_period[a]["total_precipitation"]), 2)
+                weather_period[a]["rainfall_total"] = \
+                    round(sum(weather_period[a]["rainfall_total"])
+                          / len(weather_period[a]["rainfall_total"]), 2)
+                weather_period[a]["snowfall_total"] = \
+                    round(sum(weather_period[a]["snowfall_total"])
+                          / len(weather_period[a]["snowfall_total"]), 2)
+                weather_period[a]["hours_of_precipitation"] = \
+                    round(sum(weather_period[a]["hours_of_precipitation"])
+                          / len(weather_period[a]["hours_of" +
+                                "_precipitation"]), 2)
+            break
+        except KeyError:
+            print('Invalid input detected, '
+                  ' please enter a valid number of years(0-60).')
                             
 
 
