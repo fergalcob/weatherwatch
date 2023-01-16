@@ -402,3 +402,13 @@ def weather_trends(lat, lon):
               ' for the selected month. \n')
         type_selection = Prompt.ask("Please choose from options above(1 or 2)")
         weather_selection(type_selection)
+
+    def weather_selection(weather_type):
+        match weather_type:
+            case "1":
+                temperature_table(weather_period)
+            case "2":
+                precipitation_table(weather_period)
+            case _:
+                print("Please enter a valid selection. \n")
+                weather_selection_menu()
