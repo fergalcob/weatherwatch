@@ -19,7 +19,7 @@
    * [Bugs](#bugs)
      - [Solved Issues](#solved-issues)
  - [Deployment](#deployment)
-  * [Github Pages](#github-pages)
+  * [Heroku](#heroku)
  - [Technologies Used](#technologies-used)
   * [Python Libraries](#python-libraries)
  - [Credits](#credits)
@@ -122,13 +122,14 @@ WeatherWatch is a Python based command-line interface which allows users to acce
 
 ## Deployment
 
-### Github Pages
+### Heroku
 
-1. To deploy the live site, from the Github directory for the project, access the Settings page(indicated by the cog icon) from the navbar.
-2. Once in the Settings page, access the Pages subsection from the menu on the left under 'Code and Automation'.
-3. From here, you want to choose the source for the site, in this case 'Deploy from branch' is used as the source, followed by choosing the branch, in this case it's 'Main' and '/root'
-4. All that needs to be done from there is to save those settings and allow 5-10 minutes for deployment to complete.
-5. At that point, the page was then live at [https://fergalcob.github.io/Mail-Matters/](https://fergalcob.github.io/Mail-Matters/)
+1. From the Heroku dashboard choose to create a new app, from there you'll need to provide a unique ID for the app which will be used for the app URL.
+2. After the app is created, you will want to choose Github as the deployment method and then authorize access to the Github account where the code is based.
+3. Once authorized, search for the Github project name and then connect to the correct project.
+4. When connected, enable automatic deploys and choose the correct branch for your deployment.
+5. From the settings tab, ensure that the Python and NodeJS buildpacks are added and that port 8000 is added to the config Vars list also.
+6. On next push to github, the code will be built automatically and the project will be available at https://<project-name>.herokuapp.com/
 
 ## Technologies Used
 
