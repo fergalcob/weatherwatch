@@ -248,7 +248,7 @@ def weather_table_historical(lat, lon):
                                    " of your search(YYYY-MM-DD)"))
                     end_date = (Prompt.ask
                                 ("Enter the end date of your search"
-                                 "(YYYY-MM-DD)""))
+                                 "(YYYY-MM-DD)"))
                     if len(start_date) != 10 or len(end_date) != 10:
                         raise ValueError()
                     else:
