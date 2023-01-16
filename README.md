@@ -73,7 +73,10 @@ WeatherWatch is a Python based command-line interface which allows users to acce
   
   The 24-Hour and 7-Day Forecasts allow the user to see the upcoming weather data in an easily readable table, showing clearly the date/time, temperature, weather and expected rain/snow fall. While the weather data returned from the Open Meteo represents the upcoming weather type as a numerical weathercode, these weathercodes are converted into understandable forecasts prior to being added to the table.
   
-  #### Average Weather For A Timeperiod
+  #### Historical Weather Data
+  
+   ![Historical Data - Intro](README/historical1.png)
+   ![Historical Data - Results](README/historical2.png)
   
   #### Hottest And Coldest Days
   
@@ -125,10 +128,14 @@ WeatherWatch is a Python based command-line interface which allows users to acce
 ### Heroku
 
 1. From the Heroku dashboard choose to create a new app, from there you'll need to provide a unique ID for the app which will be used for the app URL.
+ ![Heroku - New App](README/heroku-new-app.png)
 2. After the app is created, you will want to choose Github as the deployment method and then authorize access to the Github account where the code is based.
+ ![Heroku - Deployment Method](README/heroku1.png)
 3. Once authorized, search for the Github project name and then connect to the correct project.
+ ![Heroku - Project](README/heroku2.png)
 4. When connected, enable automatic deploys and choose the correct branch for your deployment.
 5. From the settings tab, ensure that the Python and NodeJS buildpacks are added and that port 8000 is added to the config Vars list also.
+ ![Heroku - Settings](README/heroku3.png)
 6. On next push to github, the code will be built automatically and the project will be available at https://<project-name>.herokuapp.com/
 
 ## Technologies Used
