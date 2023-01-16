@@ -309,3 +309,31 @@ def total_temps(lat, lon):
                   " on average for the year range you've selected giving you"
                   " an idea of the most commonly warm"
                   " and cold times of year. \n")
+    while True:
+        try:
+            number_years = \
+                Prompt.ask("How many years would you like to cover?")
+            start_date = f"{2022 - int(number_years)}-01-01"
+            end_date = "2022-12-31"
+            options_historical = \
+                Options_Historical(lat, lon, start_date, end_date)
+            mgr = OWmanager_historical(options_historical,
+                                       daily.all())
+            meteo = mgr.get_data_historical()
+
+            """
+            As the data will always be returned in YYYY-MM-DD format,
+            slices the first five characters from the time key values
+            leaving the MM-DD values in place and creates new list
+            using the MM-DD as key
+            """
+            temp_days = {}
+            for value1 in meteo['daily']['time']:
+                temp_days.update({f'{value1[5:]}': []})
+            for value1, value2 in zip(meteo['daily']['time'],
+                                      meteo['daily']['temperature_2m_max']):
+                temp_days[f'{value1[5:]}'].append(value2)
+            average_and_sort(temp_days)
+            break
+        except (ValueError, KeyError):
+            print("Please enter a valid number of years to search(0-60)")
