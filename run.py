@@ -288,3 +288,24 @@ def weather_table_historical(lat, lon):
         returnHome = readchar.readkey()
     if returnHome == readchar.key.ENTER:
         home()
+
+
+sorted_days = []
+
+"""
+Creates a list of all values for specific year and adds to their own list
+"""
+
+
+def total_temps(lat, lon):
+    os.system('cls||clear')
+    print()
+    hot_and_cold = Text("Hottest & Coldest Days", justify="left")
+    hot_and_cold.style = Style(underline=True, bold=True)
+    console.print(hot_and_cold,
+                  "\n \nLooking for the hottest and coldest days in years."
+                  " Enter the number of years you wish to search over"
+                  " and you'll be shown the 5 hottest and coldest days"
+                  " on average for the year range you've selected giving you"
+                  " an idea of the most commonly warm"
+                  " and cold times of year. \n")
