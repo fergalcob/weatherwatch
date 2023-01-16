@@ -395,3 +395,10 @@ def weather_trends(lat, lon):
                   " choose to see how temperature or precipitation has changed"
                   " for your selection has changed over time, including"
                   " changes in the highs and lows of the scale. \n")
+    def weather_selection_menu():
+        print('\n \t 1. Find the changes in temperature'
+              ' for the selected month. \n'
+              '\t 2. Find the changes in precipitation'
+              ' for the selected month. \n')
+        type_selection = Prompt.ask("Please choose from options above(1 or 2)")
+        weather_selection(type_selection)
