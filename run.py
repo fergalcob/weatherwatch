@@ -186,3 +186,36 @@ def weather_table_hourly(meteo_today):
     table.add_column("Weather", justify="center", style="cyan", no_wrap=True)
     table.add_column("Precipitation", justify="center",
                      style="cyan", no_wrap=True)
+
+        for counter, (w, x, y, z) in \
+            enumerate(list(zip(meteo_today['hourly']['precipitation'],
+                               meteo_today['hourly']['apparent_temperature'],
+                               meteo_today['hourly']['time'],
+                               meteo_today['hourly']['weathercode']))):
+        """
+        As the 7-day forecast provides data from midnight of the current day,
+        the data is iterated through so that only the 24 hours from the current
+        time are output
+        """
+        if counter == current_time.hour + 24:
+            break
+        elif counter < current_time.hour:
+            continue
+        else:
+            table.add_row(y,
+                          f"{str(x)}" +
+                          meteo_today['hourly_units']
+                          ['apparent_temperature'],
+                          weather_converter(z),
+                          f"{str(w)}"
+                          f"{meteo_today['hourly_units']['precipitation']}")
+    os.system('cls||clear')
+    table = Align(table, align="center")
+    print()
+    console.print(table)
+    print("\n Press enter to return home")
+    returnHome = readchar.readkey()
+    while returnHome is not readchar.key.ENTER:
+        returnHome = readchar.readkey()
+    if returnHome == readchar.key.ENTER:
+        home()
