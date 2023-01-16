@@ -1,6 +1,6 @@
 ![Banner Image](README/banner.png)
 ## Live Link
-[https://fergalcob.github.io/CiNAMEa/](https://fergalcob.github.io/CiNAMEa/)
+[https://weatherwatch.herokuapp.com/](https://weatherwatch.herokuapp.com/)
 
 ## Table of Contents
  - [App Goals](#app-goals)
