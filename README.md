@@ -48,9 +48,9 @@ WeatherWatch is a Python based command-line interface which allows users to acce
 ### Design Flow
 
 <details>
-  <summary>User Experience Flowchart</summary>
+  <summary>User Experience & Data Flowchart</summary>
   
-  #### User Experience Flowchart
+  #### User Experience & Data Flowchart
   
   ![Flowchart](README/WeatherWatch3.png)
   
