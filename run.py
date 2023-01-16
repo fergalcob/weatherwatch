@@ -508,5 +508,39 @@ def weather_trends(lat, lon):
                   " the month you wish to explore")
             months = Prompt.ask("Which month do you want"
                                 " to explore?(e.g. October)")
+    """
+    Test for valid number of years input by user
+    """
+    while True:
+        try:
+            number_years = (Prompt.ask
+                            ("How many years would you like to cover?(0-60)"))
+            start_date = f"{2022 - int(number_years)}-01-01"
+            end_date = "2022-12-31"
+            weather_period = {}
+            options_historical = \
+                Options_Historical(lat, lon, start_date, end_date)
+            mgr = OWmanager_historical(options_historical,
+                                       daily.all())
+            meteo = mgr.get_data_historical()
+            for a, b, c, d, e, f, g, h, i in zip(meteo['daily']['time'],
+                                                 (meteo['daily']
+                                                  ['temperature_2m_max']),
+                                                 (meteo['daily']
+                                                  ['temperature_2m_min']),
+                                                 (meteo['daily']
+                                                  ['apparent_tempe' +
+                                                  'rature_max']),
+                                                 (meteo['daily']
+                                                  ['apparent_tempe' +
+                                                  'rature_min']),
+                                                 (meteo['daily']
+                                                  ['precipitation_sum']),
+                                                 meteo['daily']['rain_sum'],
+                                                 (meteo['daily']
+                                                 ['snowfall_sum']),
+                                                 (meteo['daily']
+                                                  ['precipitation_hours'])):
+                            
 
 
