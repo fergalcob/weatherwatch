@@ -11,7 +11,7 @@
    * [Design Flow](#design-flow)
    * [Landing Screen](#landing-screen)
    * [24 Hour And 7 Day Forecast](#24-hour-and-7-day-forecast)
-   * [Average Weather For A Timeperiod](#average-weather-for-a-timeperiod)
+   * [Historical Weather Data](#historical-weather-data)
    * [Hottest And Coldest Days](#hottest-and-coldest-days)
    * [Changes In Weather](#changes-in-weather)
  - [Device Testing Results & Known Issues](#device-testing-results--known-issues)
@@ -130,10 +130,10 @@ WeatherWatch is a Python based command-line interface which allows users to acce
 1. From the Heroku dashboard choose to create a new app, from there you'll need to provide a unique ID for the app which will be used for the app URL.
  ![Heroku - New App](README/heroku-new-app.png)
 2. After the app is created, you will want to choose Github as the deployment method and then authorize access to the Github account where the code is based.
- ![Heroku - Deployment Method](README/heroku1.png)
 3. Once authorized, search for the Github project name and then connect to the correct project.
- ![Heroku - Project](README/heroku2.png)
+ ![Heroku - Deployment Method](README/heroku1.png)
 4. When connected, enable automatic deploys and choose the correct branch for your deployment.
+ ![Heroku - Project](README/heroku2.png)
 5. From the settings tab, ensure that the Python and NodeJS buildpacks are added and that port 8000 is added to the config Vars list also.
  ![Heroku - Settings](README/heroku3.png)
 6. On next push to github, the code will be built automatically and the project will be available at https://<project-name>.herokuapp.com/
