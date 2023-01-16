@@ -454,7 +454,7 @@ def weather_trends(lat, lon):
         menu_reset()
 
 
-        def precipitation_table(weather_period):
+    def precipitation_table(weather_period):
         os.system('cls||clear')
         print()
         table = Table(title=f"Monthly Precipitation Averages- {location}")
@@ -468,5 +468,18 @@ def weather_trends(lat, lon):
                          justify="center", style="cyan", no_wrap=True)
         table.add_column("Average\n Hours Of\n Precipitation.",
                          justify="center", style="cyan", no_wrap=True)
+
+        for a in reversed(weather_period):
+            table.add_row(a, f"{str(weather_period[a]['total_precipitation'])}"
+                             f"{meteo['daily_units']['precipitation_sum']}",
+                             f"{str(weather_period[a]['rainfall_total'])}"
+                             f"{meteo['daily_units']['precipitation_sum']}",
+                             f"{str(weather_period[a]['snowfall_total'])}"
+                             f"{meteo['daily_units']['precipitation_sum']}",
+                             (str(weather_period[a]
+                              ['hours_of_precipitation'])))
+        table = Align(table, align="center")
+        console.print(table)
+        menu_reset()
 
 
