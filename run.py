@@ -678,6 +678,26 @@ def home():
         except googlemaps.exceptions.ApiError:
             print(" Invalid entry detected, note this selection"
                   " should not be empty, please try again. \n")
+    options = Options(lat, lon, past_days=1)
+    mgr_today = OWmanager(options,
+                          hourly.all(),
+                          daily.all())
+    meteo_today = mgr_today.get_data()
+    console.print('\n', heading1,
+                  '\n \n \t 1. See the forecast for the next 7 days. \n'
+                  '\t 2. See the forecast for the next 24 hours. \n'
+                  '\n', heading2,
+                  '\n \n \t 3. Find the weather data'
+                  ' for a historical date range. \n'
+                  '\t 4. Find the hottest and coldest'
+                  ' days over a period of years. \n'
+                  '\t 5. Track the changes in weather for a'
+                  ' given month over a number of years. \n')
+    selection = Prompt.ask(" Please choose an option")
+    input(selection)
+
+
+home()
                             
 
 
