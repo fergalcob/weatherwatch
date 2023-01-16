@@ -440,3 +440,16 @@ def weather_trends(lat, lon):
         table.add_column("Apparent\n Temperature\n Min Avg.",
                          justify="center", style="cyan", no_wrap=True)
 
+        for a in reversed(weather_period):
+            table.add_row(a, f"{str(weather_period[a]['temps_max'])}"
+                          f"{meteo['daily_units']['temperature_2m_max']}",
+                          f"{str(weather_period[a]['temps_min'])}"
+                          f"{meteo['daily_units']['temperature_2m_max']}",
+                          f"{str(weather_period[a]['apparent_max'])}"
+                          f"{meteo['daily_units']['temperature_2m_max']}",
+                          f"{str(weather_period[a]['apparent_min'])}"
+                          f"{meteo['daily_units']['temperature_2m_max']}")
+        table = Align(table, align="center")
+        console.print(table)
+        menu_reset()
+
