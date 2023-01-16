@@ -19,3 +19,11 @@ from rich.prompt import Prompt
 from rich.text import Text
 from rich.style import Style
 from rich.align import Align
+
+current_time = datetime.datetime.now()
+hourly = Hourly()
+daily = Daily()
+daily.daily_params.append("rain_sum")
+daily.daily_params.append("snowfall_sum")
+current_weather = True
+console = Console()
