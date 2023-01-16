@@ -127,3 +127,45 @@ def weather_converter(weathercode):
         elif weathercode == 99:
             weather = 'Thunderstorm w/ Heavy Hail'
     return weather
+
+
+"""
+Create the table for the 7-day weather forecast and iterate through the results
+to present the data in a visually consistent style
+"""
+
+
+def weather_table(meteo_today):
+    table = Table(title=f"7 Day Forecast - {location}")
+    table.add_column("Date", justify="center", style="cyan", no_wrap=True)
+    table.add_column("Temperature", justify="center",
+                     style="cyan", no_wrap=True)
+    table.add_column("Weather", justify="center", style="cyan", no_wrap=True)
+    table.add_column("Precipitation", justify="center",
+                     style="cyan", no_wrap=True)
+    """
+    Create and add rows to the forecast table
+    """
+    for w, x, y, z in zip(meteo_today['daily']['precipitation_sum'],
+                          meteo_today['daily']['temperature_2m_max'],
+                          meteo_today['daily']['time'],
+                          meteo_today['daily']['weathercode']):
+        table.add_row(y,
+                      f"{str(x)}"
+                      f"{meteo_today['daily_units']['temperature_2m_max']}",
+                      weather_converter(z),
+                      f"{str(w)}"
+                      f"{meteo_today['daily_units']['precipitation_sum']}")
+    os.system('cls||clear')
+    table = Align(table, align="center")
+    print()
+    console.print(table)
+    """
+    Monitor keystrokes to return to landing page
+    """
+    print("\n Press enter to return home")
+    returnHome = readchar.readkey()
+    while returnHome is not readchar.key.ENTER:
+        returnHome = readchar.readkey()
+    if returnHome == readchar.key.ENTER:
+        home()
